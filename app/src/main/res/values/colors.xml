@@ -1,0 +1,13 @@
+<resources>
+    <color name="ink">#0B0E0C</color>
+    <color name="surface">#151A17</color>
+    <color name="card">#1B211D</color>
+    <color name="line">#2C3430</color>
+    <color name="fg">#F1F5F2</color>
+    <color name="muted">#9AA59F</color>
+    <color name="green">#44DB86</color>
+    <color name="green_ink">#04200F</color>
+    <color name="glass">#A0101612</color>
+    <color name="glass_strong">#DB0E1411</color>
+    <color name="error">#EF5A6A</color>
+</resources>

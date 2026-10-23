@@ -1,0 +1,49 @@
+<resources>
+    <style name="Theme.ReelVault" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/green</item>
+        <item name="colorOnPrimary">@color/green_ink</item>
+        <item name="colorPrimaryContainer">@color/card</item>
+        <item name="colorOnPrimaryContainer">@color/fg</item>
+        <item name="colorSecondary">@color/green</item>
+        <item name="colorSecondaryContainer">@color/card</item>
+        <item name="colorOnSecondaryContainer">@color/fg</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorSurfaceContainerHigh">@color/surface</item>
+        <item name="colorOnSurface">@color/fg</item>
+        <item name="colorOnSurfaceVariant">@color/muted</item>
+        <item name="colorOutline">@color/line</item>
+        <item name="colorError">@color/error</item>
+        <item name="android:colorBackground">@color/ink</item>
+        <item name="android:windowBackground">@color/ink</item>
+        <item name="android:statusBarColor">@color/ink</item>
+        <item name="android:navigationBarColor">@color/ink</item>
+        <item name="bottomSheetDialogTheme">@style/ThemeOverlay.ReelVault.BottomSheet</item>
+    </style>
+
+    <style name="ThemeOverlay.ReelVault.BottomSheet" parent="ThemeOverlay.Material3.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/Widget.ReelVault.BottomSheet</item>
+        <item name="android:navigationBarColor">@color/surface</item>
+    </style>
+
+    <style name="Widget.ReelVault.BottomSheet" parent="Widget.Material3.BottomSheet.Modal">
+        <item name="backgroundTint">@color/surface</item>
+    </style>
+
+    <style name="RailLabel">
+        <item name="android:textColor">@color/fg</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:shadowColor">#99000000</item>
+        <item name="android:shadowRadius">4</item>
+    </style>
+
+    <style name="RailCircle">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:background">@drawable/bg_circle_glass</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="tint">@color/fg</item>
+    </style>
+</resources>
