@@ -2,6 +2,8 @@ name: Build APK
 on:
   push:
   workflow_dispatch:
+permissions:
+  contents: write
 jobs:
   build:
     runs-on: ubuntu-24.04
@@ -35,3 +37,15 @@ jobs:
         with:
           name: ReelVault-apk
           path: app/build/outputs/apk/debug/app-debug.apk
+      - name: Publish release and apk branch
+        if: github.ref == 'refs/heads/main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cp app/build/outputs/apk/debug/app-debug.apk ReelVault.apk
+          TAG="build-${{ github.run_number }}"
+          gh release create "$TAG" ReelVault.apk --title "Reel Vault (build ${{ github.run_number }})" --notes "Download ReelVault.apk on your Android phone and install it." --latest
+          mkdir /tmp/apk && cp ReelVault.apk /tmp/apk/ && cd /tmp/apk
+          git init -q -b apk && git add ReelVault.apk
+          git -c user.name=ci -c user.email=ci@users.noreply.github.com commit -qm "APK build ${{ github.run_number }}"
+          git push -f "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}" apk
